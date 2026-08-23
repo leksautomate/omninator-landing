@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Refund Policy — Omninator</title>
+<meta name="description" content="Refund policy for the Omninator browser extension." />
+<style>
+  :root{--bg:#101012;--bg2:#17171a;--bg3:#202024;--border:#34343a;--text:#e7e8ec;--muted:#8b8b94;--silver:#e7e8ec;--silver-bright:#f6f7f9;--tint:rgba(231,232,236,0.08);--radius:12px;--warn:#d9b488}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;color:var(--text);font-size:16px;line-height:1.65;background:radial-gradient(130% 60% at 50% 0%,rgba(231,232,236,0.06),transparent 60%),var(--bg)}
+  a{color:var(--silver);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(16,16,18,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1040px;margin:0 auto;padding:0 20px}
+  .brand{display:flex;flex-direction:column;line-height:1.15}
+  .brand b{font-size:16px;color:var(--silver-bright)}
+  .brand span{font-size:11px;color:var(--muted)}
+  .nav a.home{color:var(--muted);font-size:14px;font-weight:600}
+  .policy{padding:46px 0 30px}
+  .policy h1{font-size:32px;color:var(--silver-bright);letter-spacing:-.5px;margin-bottom:8px}
+  .policy .updated{color:var(--muted);font-size:13px;margin-bottom:26px}
+  .policy h2{color:var(--silver-bright);font-size:19px;margin:32px 0 8px}
+  .policy p{color:var(--muted);font-size:15px;margin-bottom:10px}
+  .policy ul{margin:6px 0 14px 0;list-style:none}
+  .policy li{color:var(--muted);font-size:15px;padding:5px 0 5px 24px;position:relative}
+  .policy li.yes::before{content:"✓";position:absolute;left:2px;color:var(--ok,#a0c2b4);font-weight:700}
+  .policy li.no::before{content:"✕";position:absolute;left:3px;color:#d99488;font-weight:700}
+  .policy li.dot::before{content:"•";position:absolute;left:6px;color:var(--silver)}
+  .policy strong{color:var(--text)}
+  .window{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:var(--radius);padding:14px 16px;margin:14px 0}
+  .window p{margin:0;font-size:14px}
+  footer{border-top:1px solid var(--border);padding:26px 0;margin-top:24px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;max-width:1040px;margin:0 auto;padding:0 20px}
+  .foot a{color:var(--muted);font-size:13px;margin-right:16px}
+  .foot a:hover{color:var(--text)}
+  .foot .c{color:var(--muted);font-size:13px}
+  .disc{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;max-width:1040px;margin-left:auto;margin-right:auto;padding:0 20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand"><b>Omninator&nbsp;✦</b><span>Google Flow Batch Engine</span></div>
+    <a class="home" href="index.html">← Back to home</a>
+  </div>
+</header>
+
+<main class="wrap policy">
+  <h1>Refund Policy</h1>
+  <p class="updated">Last updated: 23 August 2026</p>
+
+  <div class="window">
+    <p><strong>Checkout isn't live yet.</strong> Monthly ($2), Yearly ($20) and Lifetime ($49)
+       pricing shown on the homepage is a preview. This policy describes the terms that will
+       apply once purchases open.</p>
+  </div>
+
+  <p>Omninator is a <strong>digital automation tool</strong>. This policy explains the limited
+     circumstances in which a refund will be granted once purchases are live. By completing a
+     purchase you agree to this policy.</p>
+
+  <h2>Refund window</h2>
+  <p>A refund may be requested only <strong>within 14 days</strong> of the original purchase date.
+     Requests made after 14 days will not be considered. Monthly and Yearly subscriptions can be
+     cancelled at any time to stop future renewals; cancellation does not itself refund the
+     current billing period.</p>
+
+  <h2>Refunds are allowed only if ALL conditions are met</h2>
+  <ul>
+    <li class="yes">The extension is completely non-functional</li>
+    <li class="yes">Core advertised features fail entirely</li>
+    <li class="yes">The issue is caused by the Omninator software itself</li>
+    <li class="yes">The issue is reported within the 14-day refund window</li>
+    <li class="yes">Valid proof is provided (screenshots or a screen recording)</li>
+  </ul>
+  <p>Partial functionality issues, misunderstandings, or third-party problems do not qualify.</p>
+
+  <h2>Refunds are NOT allowed for the following reasons</h2>
+  <ul>
+    <li class="no">Change of mind</li>
+    <li class="no">Mistaken purchase</li>
+    <li class="no">Misunderstanding of features</li>
+    <li class="no">Incorrect setup or user error</li>
+    <li class="no">Google Flow changes, outages, or discontinuation</li>
+    <li class="no">Account bans, limits, or restrictions on Google Flow itself</li>
+    <li class="no">Violation of Google's or Omninator's acceptable-use terms</li>
+  </ul>
+
+  <h2>How to request a refund</h2>
+  <p>Open an issue on <a href="https://github.com/leksautomate/omninator-landing">GitHub</a>
+     including your purchase email, order ID, a description of the issue, and proof (screenshots
+     or a screen recording). Incomplete requests may be rejected.</p>
+
+  <h2>Dispute &amp; chargeback policy</h2>
+  <p>Before filing any bank dispute or chargeback, you agree to contact us first and allow
+     reasonable time to investigate. If a chargeback is filed without first contacting us,
+     license access may be revoked and future purchases refused.</p>
+
+  <h2>Final acknowledgement</h2>
+  <p>By completing a purchase, you acknowledge that you understand this is a digital automation
+     tool, accept these refund limitations, and accept that Google Flow's own availability and
+     policies are outside our control. Nothing in this policy limits any mandatory statutory
+     consumer rights you may have under the laws that apply to you.</p>
+
+  <h2>Contact</h2>
+  <p>For refund, cancellation, or billing questions, open an issue on
+     <a href="https://github.com/leksautomate/omninator-landing">GitHub</a>.</p>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a href="index.html">Home</a>
+      <a href="guide.html">Prompt Guide</a>
+      <a href="releases.html">Releases</a>
+      <a href="refund.html">Refund</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="index.html#terms">Terms</a>
+    </div>
+    <div class="c">© 2026 Omninator</div>
+  </div>
+  <div class="disc">Not affiliated with, endorsed by, or sponsored by Google. "Google Flow" is a trademark of Google LLC.</div>
+</footer>
+
+</body>
+</html>
