@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Omninator — Bulk AI Image &amp; Video Generation for Google Flow</title>
-<meta name="description" content="A Chrome extension that automates bulk AI image and video generation in Google Flow — queue prompts, add reference images, and download every result, organized. Runs entirely through your own Flow session." />
+<title>Omninator — Turn a Prompt List into a Finished Batch on Google Flow</title>
+<meta name="description" content="Omninator is a Chrome extension that drives Google Flow for you: load a list of prompts and reference images, press Start, and every image or video gets generated and filed away automatically." />
 <style>
   :root{
     --bg:#101012; --bg2:#17171a; --bg3:#202024; --bg4:#2a2a30;
@@ -125,53 +125,54 @@
 <main>
   <div class="wrap hero">
     <span class="pill">Chrome extension · Manifest V3</span>
-    <h1>Bulk AI image &amp; video generation, on autopilot.</h1>
-    <p>Queue hundreds of prompts, add reference images, hit Start — and Omninator generates and
-       downloads every image and video for you, neatly organized. No more one-by-one.</p>
+    <h1>Stop clicking Generate one prompt at a time.</h1>
+    <p>Drop in a list of prompts and a few reference images, press Start, and Omninator drives
+       Google Flow for you — queuing every job and filing the finished images and videos into
+       folders on its own.</p>
     <div class="cta">
       <a href="#pricing" class="btn">See Pricing</a>
-      <a href="#how" class="btn ghost">See how it works</a>
+      <a href="#how" class="btn ghost">Watch it work</a>
     </div>
   </div>
 
   <section id="features" class="wrap">
-    <h2 class="h2">Everything you need to automate bulk generation</h2>
-    <p class="sub">Built for creators who generate a lot of images and videos in Google Flow and are tired of doing it one prompt at a time.</p>
+    <h2 class="h2">Built to take the busywork out of bulk generation</h2>
+    <p class="sub">For anyone running the same few clicks in Google Flow dozens or hundreds of times over — Omninator does the clicking.</p>
     <div class="grid">
-      <div class="card"><div class="ic">⚡</div><h3>Bulk from a prompt list</h3><p>Paste or upload a .txt file of prompts, separated by a blank line, and queue them all in one automated run.</p></div>
-      <div class="card"><div class="ic">🎬</div><h3>Image &amp; video generation</h3><p>Batch images, or generate videos with text, start/end frame, or reference modes — Veo and Omni Flash supported.</p></div>
-      <div class="card"><div class="ic">🖼</div><h3>Reference images</h3><p>Add Subject, Scene and Style references that apply to every prompt in the batch — up to 10 in total.</p></div>
-      <div class="card"><div class="ic">🏷</div><h3>Named tags &amp; chaining</h3><p><code>#name</code> a result, then reuse it with <code>@name</code> in later prompts — perfect for a consistent character across a whole batch.</p></div>
-      <div class="card"><div class="ic">🎛</div><h3>Models &amp; settings</h3><p>Pick your model, aspect ratio, outputs per prompt, and quality or upscale once — it applies to the whole batch.</p></div>
-      <div class="card"><div class="ic">⬇</div><h3>Auto-download, organized</h3><p>Every result saves straight to your chosen folder, named numbered, prompt-based, or with a custom prefix.</p></div>
-      <div class="card"><div class="ic">📋</div><h3>Queue with auto-chain</h3><p>Stack up multiple batches with different settings — finished batches auto-chain into the next one.</p></div>
-      <div class="card"><div class="ic">🔁</div><h3>Retry, per prompt</h3><p>A failed prompt shows its real error and retries on its own — no need to rebuild or rerun the whole batch.</p></div>
-      <div class="card"><div class="ic">🧭</div><h3>Guided tour</h3><p>A first-run walkthrough of every panel, replayable anytime from Settings.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Load hundreds of prompts at once</h3><p>Paste a block of text or drop a .txt file in — each chunk separated by a blank line becomes its own generation job.</p></div>
+      <div class="card"><div class="ic">🎬</div><h3>One engine, two media types</h3><p>Run a batch of stills, or drive Veo / Omni Flash video generation with text prompts, start/end frames, or reference-guided clips.</p></div>
+      <div class="card"><div class="ic">🖼</div><h3>Keep the look consistent</h3><p>Upload up to 10 Subject, Scene and Style references and every prompt in the run picks them up without re-attaching anything.</p></div>
+      <div class="card"><div class="ic">🏷</div><h3>Name it once, call it back later</h3><p>Tag a result with <code>#name</code>, then pull it into any later prompt with <code>@name</code> — the same face or product, dozens of shots in.</p></div>
+      <div class="card"><div class="ic">🎛</div><h3>Set your specs once</h3><p>Model, aspect ratio, output count, quality or upscale — configure it a single time and it carries through the entire batch.</p></div>
+      <div class="card"><div class="ic">⬇</div><h3>Downloads that file themselves</h3><p>Results land in whichever folder you point at, already named the way you asked — sequential numbers, a prompt slug, or your own prefix.</p></div>
+      <div class="card"><div class="ic">📋</div><h3>Line up batches and walk away</h3><p>Queue several runs with different settings and let them fire off back-to-back — no need to babysit Start.</p></div>
+      <div class="card"><div class="ic">🔁</div><h3>Failures don't stall the batch</h3><p>A failed prompt shows the real error and can be relaunched on its own, while the rest of the run keeps moving.</p></div>
+      <div class="card"><div class="ic">🧭</div><h3>A tour that actually shows you around</h3><p>A first-run walkthrough highlights every panel; replay it anytime from Settings if you forget where something lives.</p></div>
     </div>
   </section>
 
   <section id="how" class="wrap">
-    <h2 class="h2">How it works</h2>
-    <p class="sub">From a list of prompts to a folder of images or videos in four steps.</p>
+    <h2 class="h2">How a batch actually runs</h2>
+    <p class="sub">Four steps between a list of prompts and a folder full of finished results.</p>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Open Flow</h3><p>Open a Google Flow project tab — Omninator connects to your own session automatically.</p></div>
-      <div class="step"><div class="n">2</div><h3>Add prompts</h3><p>Paste or upload your prompts; add reference images if you want.</p></div>
-      <div class="step"><div class="n">3</div><h3>Start or Queue</h3><p>Pick your settings and hit Start, or add to the Queue to run batches back-to-back.</p></div>
-      <div class="step"><div class="n">4</div><h3>Done</h3><p>Results land in the Gallery and download automatically, organized by batch.</p></div>
+      <div class="step"><div class="n">1</div><h3>Have Flow open</h3><p>Keep a Google Flow project tab open — Omninator picks up your existing session, nothing extra to configure.</p></div>
+      <div class="step"><div class="n">2</div><h3>Load your prompts</h3><p>Paste or import your list, and attach reference images if this batch needs them.</p></div>
+      <div class="step"><div class="n">3</div><h3>Launch or stack it</h3><p>Hit Start to run right away, or send it to the Queue to fire once whatever's running finishes.</p></div>
+      <div class="step"><div class="n">4</div><h3>It files itself</h3><p>Watch results show up in the Gallery while finished files save straight into your destination folder.</p></div>
     </div>
   </section>
 
   <section id="pricing" class="wrap">
-    <h2 class="h2">Simple pricing</h2>
-    <p class="sub">Every plan includes the full feature set — pick the billing cycle that suits you.</p>
+    <h2 class="h2">Straightforward pricing</h2>
+    <p class="sub">One feature set, three ways to pay for it.</p>
     <div class="prices">
       <div class="price">
         <h3>Monthly</h3>
         <div class="amt">$2 <small>/ month</small></div>
         <ul>
-          <li>All current &amp; future features</li>
-          <li>Unlimited batches &amp; prompts</li>
-          <li>Cancel anytime</li>
+          <li>Every feature, current and future</li>
+          <li>No cap on batches or prompts</li>
+          <li>Cancel whenever</li>
         </ul>
         <a href="https://github.com/leksautomate/omninator-landing" target="_blank" rel="noopener" class="btn ghost">View on GitHub</a>
       </div>
@@ -179,9 +180,9 @@
         <h3>Yearly <span style="font-size:11px;color:var(--silver)">· BEST VALUE</span></h3>
         <div class="amt">$20 <small>/ year</small></div>
         <ul>
-          <li>All current &amp; future features</li>
-          <li>Unlimited batches &amp; prompts</li>
-          <li>~2 months free vs. monthly</li>
+          <li>Every feature, current and future</li>
+          <li>No cap on batches or prompts</li>
+          <li>Two months cheaper than paying monthly</li>
         </ul>
         <a href="https://github.com/leksautomate/omninator-landing" target="_blank" rel="noopener" class="btn">View on GitHub</a>
       </div>
@@ -189,36 +190,36 @@
         <h3>Lifetime</h3>
         <div class="amt">$49 <small>one-time</small></div>
         <ul>
-          <li>All current &amp; future features</li>
-          <li>Unlimited batches &amp; prompts</li>
-          <li>Pay once, no recurring fees</li>
+          <li>Every feature, current and future</li>
+          <li>No cap on batches or prompts</li>
+          <li>One payment, nothing recurring</li>
         </ul>
         <a href="https://github.com/leksautomate/omninator-landing" target="_blank" rel="noopener" class="btn ghost">View on GitHub</a>
       </div>
     </div>
-    <p class="price-note">Checkout isn't live yet — pricing shown here is a preview of what's coming. Watch the GitHub repo for launch updates.</p>
+    <p class="price-note">Purchasing isn't wired up yet — this is a preview of what pricing will look like. Watch the repo for when checkout goes live.</p>
   </section>
 
   <section id="faq" class="wrap">
-    <h2 class="h2">Frequently asked questions</h2>
+    <h2 class="h2">Questions people ask</h2>
     <div class="faq">
-      <details><summary>What does Omninator do?</summary><p>It's a Chrome extension that automates bulk AI image and video generation in Google Flow. You give it a list of prompts (and optional reference images), and it generates and downloads every image and video for you, organized into folders.</p></details>
-      <details><summary>Do I use my own account to generate?</summary><p>Yes. Generation runs through your own Google Flow session and quota — Omninator only automates Flow's own visible controls (prompt box, generate button, file drops). It doesn't bypass Flow's authentication, safety systems, or generation limits.</p></details>
-      <details><summary>Is it a subscription?</summary><p>You'll be able to choose monthly, yearly, or a one-time lifetime purchase — whichever billing cycle suits you. See <a href="#pricing" style="color:var(--silver)">Pricing</a> above.</p></details>
-      <details><summary>Which browsers are supported?</summary><p>Chrome and other Chromium browsers that support Manifest V3 extensions.</p></details>
-      <details><summary>Can I get a refund?</summary><p>Once purchases are live, refunds will be handled per the <a href="refund.html" style="color:var(--silver)">Refund Policy</a>.</p></details>
+      <details><summary>What exactly does Omninator automate?</summary><p>It drives Google Flow's own interface for you — typing each prompt, applying your settings, and clicking Generate — so a list turns into a finished batch of images or videos without you sitting there doing it one at a time.</p></details>
+      <details><summary>Whose Google Flow account does it use?</summary><p>Yours. Every generation runs through your own signed-in session and counts against your own quota. Omninator only clicks the buttons you'd click yourself — it never touches Flow's sign-in, safety checks, or generation limits.</p></details>
+      <details><summary>Do I have to subscribe?</summary><p>Pick whichever fits — Monthly, Yearly, or a one-time Lifetime purchase. See <a href="#pricing" style="color:var(--silver)">Pricing</a> above for what each includes.</p></details>
+      <details><summary>What browsers work?</summary><p>Any Chromium-based browser that supports Manifest V3 extensions, Chrome included.</p></details>
+      <details><summary>What about refunds?</summary><p>Once purchasing is live, refunds will follow the terms on the <a href="refund.html" style="color:var(--silver)">Refund Policy</a> page.</p></details>
     </div>
   </section>
 
   <section class="wrap policy">
     <h2 class="h2" id="terms">Terms of use</h2>
-    <p>Omninator is a productivity tool that automates actions you can perform yourself in Google Flow, using your own account and quota. You are responsible for complying with the terms of any third-party services you use it with. The software is provided "as is" without warranty. Lifetime access refers to the lifetime of the tool.</p>
+    <p>Omninator automates steps you could already take by hand inside Google Flow, using your own login and your own quota — it doesn't unlock anything you couldn't reach yourself. You're responsible for staying within the terms of any service you point it at. It's provided as-is, with no warranty. "Lifetime" describes the working life of the tool, not a guaranteed calendar length.</p>
 
     <h3 id="acceptable-use">Prohibited content &amp; acceptable use</h3>
-    <p>You may not use Omninator to generate, request, or process any content that is sexually explicit, pornographic, or otherwise NSFW. This includes deepfakes or synthetic media that depict a real, identifiable person (including public figures) without consent, or that are meant to impersonate, deceive, defame, sexualize, or harm any person. It also includes any content that depicts minors in an unsafe or inappropriate context, and any content that is illegal or violates the rights of others. All generation is performed through your own Google Flow account and is subject to Google's content and safety policies. Omninator only relays your prompts to Google Flow and does not bypass, disable, or circumvent any of Google's moderation or safety controls. Violating this policy may result in immediate suspension or termination of your license without a refund.</p>
+    <p>Don't use Omninator to generate sexual, pornographic, or otherwise NSFW material. That covers deepfakes or synthetic media depicting a real, identifiable person — public figures included — made without consent, or built to impersonate, deceive, defame, sexualize, or otherwise harm someone. It also covers unsafe or inappropriate depictions of minors, and anything illegal or that violates someone else's rights. Every generation still runs through your own Google Flow account and stays subject to Google's own content and safety rules — Omninator forwards your prompts to Flow and does not disable, weaken, or route around any of Google's moderation. Breaking this rule can get a license suspended or revoked, without a refund.</p>
 
     <h3>Contact</h3>
-    <p>Questions or support requests: open an issue on <a href="https://github.com/leksautomate/omninator-landing" style="color:var(--silver)">GitHub</a>.</p>
+    <p>Have a question or hit a problem? Open an issue on <a href="https://github.com/leksautomate/omninator-landing" style="color:var(--silver)">GitHub</a>.</p>
   </section>
 </main>
 

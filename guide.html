@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Prompt Guide — Omninator</title>
-<meta name="description" content="How to write prompts for Omninator — batching images and videos, reference images, @tag to reuse an image, #name to chain images, and video modes with @start / @end frame tags." />
+<meta name="description" content="Reference for Omninator's prompt syntax: batching images and videos, reference images, reusing a result with @tag, naming one with #name, and driving video clips with @start / @end frame tags." />
 <style>
   :root{--bg:#101012;--bg2:#17171a;--bg3:#202024;--border:#34343a;--text:#e7e8ec;--muted:#8b8b94;--silver:#e7e8ec;--silver-bright:#f6f7f9;--tint:rgba(231,232,236,0.08);--radius:12px;--warn:#d9b488;--ok:#a0c2b4}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -60,13 +60,13 @@
 
 <main class="wrap policy">
   <h1>Prompt Guide</h1>
-  <p class="updated">Everything you can put in a prompt — with copy-ready examples.</p>
+  <p class="updated">A reference for every piece of syntax a prompt can carry, with examples you can paste straight in.</p>
 
   <div class="lead">
-    <p>Omninator runs a <strong>list</strong> of prompts against Google Flow in one batch — for <strong>images</strong> or <strong>videos</strong>. Beyond plain text, you can pull in <strong>reference images</strong>, reuse a generated image by name with <strong><code>@tag</code></strong>, name a new image with <strong><code>#name</code></strong> so later prompts can reuse it, and — in the Video tab — drive each clip with <strong><code>@start</code></strong> / <strong><code>@end</code></strong> frame tags.</p>
+    <p>A single run of Omninator works through a <strong>whole list</strong> of prompts against Google Flow — <strong>images</strong> or <strong>videos</strong>. Beyond plain text, a prompt can pull in <strong>reference images</strong>, point back at an earlier result with <strong><code>@tag</code></strong>, hand a fresh result a name via <strong><code>#name</code></strong> for later reuse, and, on the video side, pin down each clip's frames with <strong><code>@start</code></strong> / <strong><code>@end</code></strong>.</p>
   </div>
 
-  <div class="note"><p><strong>Two tabs, same idea.</strong> Switch between <strong>Images</strong> and <strong>Videos</strong> at the top of the side panel. Each keeps its own prompt text, so you can set up one without disturbing the other. Sections 1–5 below apply to both; section 6 covers what's specific to video.</p></div>
+  <div class="note"><p><strong>Images and Videos are separate tabs.</strong> Each keeps its own prompt text, so setting one up never touches the other. Sections 1–5 apply to both; section 6 is video-only.</p></div>
 
   <div class="toc">
     <a href="#basics">Basics</a>
@@ -79,40 +79,40 @@
   </div>
 
   <h2 id="basics">1. The basics</h2>
-  <p>Type or upload one prompt per block. <strong>Separate each prompt with a blank line</strong> — every block becomes one generation (or several, if you set outputs-per-prompt above 1).</p>
+  <p>Write or upload one prompt per block, with a <strong>blank line</strong> between them — each block turns into one generation (or several, when outputs-per-prompt is set above 1).</p>
   <pre><code>a cozy cabin in a snowy forest, warm light in the windows
 
 a neon city street at night, rain reflections, cinematic
 
 a studio portrait of an astronaut, soft key light</code></pre>
-  <p>Load a <code>.txt</code> file or paste directly, pick your model / aspect ratio / quality once in the settings panel, then press <strong>Start</strong>. Results preview live and auto-download into your chosen folder.</p>
+  <p>Import a <code>.txt</code> file or type directly, set your model / aspect ratio / quality once, then hit <strong>Start</strong>. Results appear as they finish and save automatically into your chosen folder.</p>
 
   <h2 id="refs">2. Reference images</h2>
-  <p>In the <strong>Reference Images</strong> section you can add <strong>Subject</strong> (who / what), <strong>Scene</strong> (where), and <strong>Style</strong> (look / mood) images. They apply to <strong>every</strong> prompt in the batch.</p>
+  <p>The <strong>Reference Images</strong> panel holds three slots — <strong>Subject</strong> (who or what), <strong>Scene</strong> (where), and <strong>Style</strong> (look and mood) — and whatever you put there applies to <strong>every</strong> prompt in the run.</p>
   <ul>
-    <li class="dot">Up to <strong>5 per slot</strong>, and <strong>10 in total</strong> across Subject + Scene + Style combined.</li>
-    <li class="dot">Use these when the whole batch should share the same look or characters.</li>
+    <li class="dot"><strong>5 per slot</strong>, capped at <strong>10 total</strong> across all three combined.</li>
+    <li class="dot">Reach for these when the whole batch should share one look or one set of characters.</li>
   </ul>
 
-  <h2 id="at">3. <code>@tag</code> — reuse an existing image by name</h2>
-  <p>Add <code>@name</code> or <code>@[two words]</code> to a prompt to pull that image in as a reference for just that prompt:</p>
+  <h2 id="at">3. <code>@tag</code> — pull in an existing image by name</h2>
+  <p>Drop <code>@name</code> or <code>@[two words]</code> into a prompt and that image becomes a reference for just that one prompt:</p>
   <pre><code><span class="t">@lina</span> standing in a misty forest, golden hour, wide shot</code></pre>
   <ul>
-    <li class="dot"><code>@name</code> for single-word names; <code>@[two words]</code> for names with spaces.</li>
-    <li class="dot">An uploaded file like <code>lina.png</code> works as <code>@lina</code> (the extension is optional — <code>@[lina.png]</code> also works).</li>
-    <li class="dot">An <code>@tag</code> Omninator can't find is simply left in the prompt as plain text.</li>
+    <li class="dot"><code>@name</code> works for single words; wrap multi-word names in brackets, e.g. <code>@[two words]</code>.</li>
+    <li class="dot">A file you uploaded as <code>lina.png</code> resolves as <code>@lina</code> — the extension is optional, so <code>@[lina.png]</code> also matches.</li>
+    <li class="dot">If a name doesn't match anything, the tag is left untouched as ordinary text in the prompt.</li>
   </ul>
 
-  <h2 id="hash">4. <code>#name</code> — name the image a prompt creates</h2>
-  <p>Add <code>#name</code> to a prompt to give the image it generates a name. The <code>#tag</code> isn't part of the picture — it just labels the result so you can reference it later with <code>@name</code>.</p>
+  <h2 id="hash">4. <code>#name</code> — label the image a prompt produces</h2>
+  <p>Attach <code>#name</code> to a prompt and its result gets that label. Nothing about <code>#name</code> shows up in the picture itself — it exists purely so a later prompt can pull the result back in with <code>@name</code>.</p>
   <pre><code>a young woman, red hair, freckles, studio portrait <span class="t">#lina</span></code></pre>
   <ul>
-    <li class="dot"><code>#name</code> or <code>#[two words]</code>, same as tags.</li>
-    <li class="dot">One name per prompt. When a prompt makes several images, the name is given to the first one.</li>
+    <li class="dot">Same bracket rule as tags: <code>#name</code> or <code>#[two words]</code>.</li>
+    <li class="dot">Only one name sticks per prompt — if it produces several images, the first one gets it.</li>
   </ul>
 
-  <h2 id="chain">5. Chaining — the same character across a batch</h2>
-  <p>Combine the two: name a character once, then reuse it in the prompts that follow — all in a single run.</p>
+  <h2 id="chain">5. Chaining — carrying a character through a batch</h2>
+  <p>Put the two together: give a character a name once, then keep calling it back for every prompt that follows, all inside one run.</p>
   <pre><code>a young woman, red hair, freckles, studio portrait <span class="t">#lina</span>
 
 <span class="t">@lina</span> sitting in a sunlit cafe, candid, 35mm
@@ -120,43 +120,43 @@ a studio portrait of an astronaut, soft key light</code></pre>
 <span class="t">@lina</span> hiking a mountain trail at sunrise, wide cinematic shot
 
 <span class="t">@lina</span> in a spacesuit on a red-rock planet, dramatic light</code></pre>
-  <p>The first prompt creates and names <code>lina</code>; every prompt after it reuses that exact image as a reference — so it's recognizably the same person throughout.</p>
-  <div class="note"><p>You can mix both in one line — e.g. <code>#hero @city walking out of the station at dusk</code> names the new image <code>hero</code> while referencing your <code>city</code> image.</p></div>
+  <p>The opening prompt both creates and labels <code>lina</code>; each prompt afterward pulls in that exact result — the same person, recognizably, all the way through.</p>
+  <div class="note"><p>Both can sit in one line — <code>#hero @city walking out of the station at dusk</code> labels the new result <code>hero</code> while also referencing your existing <code>city</code> image.</p></div>
 
   <h2 id="video">6. Video prompts</h2>
-  <p>Switch to the <strong>Videos</strong> tab to batch-generate clips the same way you batch images — one prompt per block, separated by a blank line. Pick your <strong>model</strong>, <strong>aspect ratio</strong>, <strong>outputs per prompt</strong> and <strong>duration</strong> once, choose a <strong>video mode</strong>, then press <strong>Start</strong>.</p>
+  <p>The <strong>Videos</strong> tab batches clips the same way — one prompt per block, blank line between them. Set <strong>model</strong>, <strong>aspect ratio</strong>, <strong>outputs per prompt</strong> and <strong>duration</strong> once, pick a <strong>video mode</strong>, and press <strong>Start</strong>.</p>
 
   <h3>Frame tags — <code>@start</code>, <code>@end</code>, and references</h3>
-  <p>Just like <code>@tag</code> for images, you can name the exact frames a single video should use, right inside its prompt:</p>
+  <p>The same idea as <code>@tag</code> for images, but for pinning down a clip's exact frames:</p>
   <ul>
-    <li class="dot"><strong>Start frame:</strong> <code>@start:name</code> sets that prompt's opening frame.</li>
-    <li class="dot"><strong>Start + End frame:</strong> <code>@start:name</code> and <code>@end:name</code> set the first and last frames.</li>
-    <li class="dot"><strong>Reference mode:</strong> <code>@name</code> (plain, up to 4) pulls images in as references — same syntax as the Images tab.</li>
+    <li class="dot"><strong>Start frame mode:</strong> <code>@start:name</code> sets where that clip opens.</li>
+    <li class="dot"><strong>Start + End mode:</strong> <code>@start:name</code> paired with <code>@end:name</code> sets the first and last frame.</li>
+    <li class="dot"><strong>Reference mode:</strong> plain <code>@name</code> tags (up to 4) work exactly as they do on the Images tab.</li>
   </ul>
   <pre><code><span class="t">@start:sunrise</span> the camera pushes slowly through the misty valley, cinematic
 
 <span class="t">@start:door_closed</span> <span class="t">@end:door_open</span> the old wooden door swings open into daylight</code></pre>
   <ul>
-    <li class="dot">Single-word names use <code>@start:name</code>; names with spaces use <code>@start:[my hero]</code>.</li>
-    <li class="dot">Tags are removed from the text sent to the model, and shown as chips on each row so you can see which frames a clip will use.</li>
+    <li class="dot">Multi-word frame names use brackets too: <code>@start:[my hero]</code>.</li>
+    <li class="dot">Frame tags never reach the model as text — they're stripped out and shown instead as chips on the row, so you can see which frames a clip is set to use.</li>
   </ul>
 
   <h3>Models &amp; durations</h3>
   <ul>
-    <li class="dot"><strong>Omni Flash</strong> — fastest; supports Text, Start-frame, and Reference modes.</li>
-    <li class="dot"><strong>Veo 3.1 Lite / Fast / Quality</strong> — higher quality at a fixed <strong>8s</strong> duration; Quality is limited to Text and frame modes and is the only model allowed 4K upscale.</li>
-    <li class="dot">Settings auto-correct impossible combinations (for example, resetting the duration to 8s for Veo models) so you never end up with a request Flow will reject.</li>
+    <li class="dot"><strong>Omni Flash</strong> — the fastest option; covers Text, Start-frame, and Reference modes.</li>
+    <li class="dot"><strong>Veo 3.1 Lite / Fast / Quality</strong> — higher quality, locked to <strong>8s</strong>; Quality is restricted to Text and frame modes but is the only one that unlocks 4K upscale.</li>
+    <li class="dot">An incompatible combination gets auto-corrected (Veo forced back to 8s, for instance) rather than sent to Flow to fail.</li>
   </ul>
-  <p>Finished clips preview live and auto-download into their own Videos run folder, separate from your images.</p>
+  <p>Finished clips show up live and save into their own Videos folder, kept apart from image output.</p>
 
-  <h2 id="precedence">7. Precedence hierarchy</h2>
-  <p>When more than one reference could apply to a prompt, Omninator resolves it in this order:</p>
+  <h2 id="precedence">7. What wins when references overlap</h2>
+  <p>If a prompt could draw from more than one source, Omninator checks in this order:</p>
   <ul>
-    <li class="yes"><strong>1. Prompt tags</strong> — <code>@tag</code>, <code>@start:</code>, <code>@end:</code> written directly in the prompt win first.</li>
-    <li class="yes"><strong>2. Shared references</strong> — the Subject / Scene / Style set from the Reference Images panel, applied when nothing more specific is given.</li>
+    <li class="yes"><strong>1. Tags written in the prompt</strong> — <code>@tag</code>, <code>@start:</code>, <code>@end:</code> take priority over anything else.</li>
+    <li class="yes"><strong>2. The shared reference set</strong> — Subject / Scene / Style from the panel, used only when a prompt doesn't specify its own.</li>
   </ul>
 
-  <p style="margin-top:22px">Questions or ideas? Open an issue on <a href="https://github.com/leksautomate/omninator-landing">GitHub</a>.</p>
+  <p style="margin-top:22px">Something unclear or missing? Open an issue on <a href="https://github.com/leksautomate/omninator-landing">GitHub</a>.</p>
 </main>
 
 <footer>
