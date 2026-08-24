@@ -1,0 +1,22 @@
+# Omninator
+
+> Omninator is a Chrome (Manifest V3) extension that batch-automates image and video generation in Google Flow — it queues prompts, drives Flow's own UI, and downloads the results into an organized folder structure. It does not bypass Google Flow's authentication, safety systems, regional availability, subscription limits, or generation quota; the extension only interacts with visible controls, prompt inputs, and file-drop events, the same way a person using Flow by hand would.
+
+Paste a list of prompts (one per blank-line-separated block), optionally attach up to 10 Subject/Scene/Style reference images, press Start, and Omninator drives Google Flow through every prompt in order — typing it in, applying your chosen model/aspect ratio/output settings, clicking Generate, and waiting for the result. `#name` tags let a prompt label a generated result so a later prompt can pull it back in with `@name`, holding a character, product, or style steady across a whole batch. Finished images and videos are downloaded automatically into a folder you choose, named the way you configured.
+
+## Docs
+
+- [Home](https://leksautomate.github.io/omninator-landing/index.html): Overview, feature list, pricing, FAQ, and terms of use.
+- [Prompt Guide](https://leksautomate.github.io/omninator-landing/guide.html): Full syntax reference for prompt blocks, `#name`/`@name` tags, and `@start:`/`@end:` video frame tags.
+- [Releases](https://leksautomate.github.io/omninator-landing/releases.html): What's shipped today versus what's still on the roadmap.
+
+## Policies
+
+- [Privacy Policy](https://leksautomate.github.io/omninator-landing/privacy.html): Omninator has no account system and no backend server — settings and run history are stored only in the browser's local extension storage, and prompts/results never pass through us.
+- [Refund Policy](https://leksautomate.github.io/omninator-landing/refund.html): Terms that will apply once paid checkout goes live.
+
+## Notes
+
+- Pricing shown on the Home page (Monthly $2, Yearly $20, Lifetime $49) is a preview — checkout is not wired up yet, and CTA buttons currently link to the GitHub repository.
+- Source: https://github.com/leksautomate/omninator-landing
+- Not affiliated with, endorsed by, or sponsored by Google. "Google Flow" is a trademark of Google LLC.
