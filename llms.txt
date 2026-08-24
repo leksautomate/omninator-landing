@@ -17,6 +17,7 @@ Paste a list of prompts (one per blank-line-separated block), optionally attach 
 
 ## Notes
 
-- Pricing shown on the Home page (Monthly $2, Yearly $20, Lifetime $49) is a preview — checkout is not wired up yet, and CTA buttons currently link to the GitHub repository.
+- Install: https://chromewebstore.google.com/detail/omninator-%E2%80%94-google-flow-b/lmloaecdbhggnjdgakapmomkdiepppgl — free to install today.
+- Pricing shown on the Home page (Monthly $2, Yearly $20, Lifetime $49) is a preview — paid checkout is not wired up yet.
 - Source: https://github.com/leksautomate/omninator-landing
 - Not affiliated with, endorsed by, or sponsored by Google. "Google Flow" is a trademark of Google LLC.
