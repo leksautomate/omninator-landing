@@ -46,9 +46,26 @@
   .foot a:hover{color:var(--text)}
   .foot .c{color:var(--muted);font-size:13px}
   .disc{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.8;max-width:1040px;margin-left:auto;margin-right:auto;padding:0 20px}
+
+  /* promo bar */
+  .promo-bar{background:linear-gradient(90deg,rgba(160,194,180,.14),rgba(231,232,236,.06));border-bottom:1px solid var(--border)}
+  .promo-bar-inner{max-width:1040px;margin:0 auto;padding:9px 20px;display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;flex-wrap:wrap}
+  .promo-bar span{font-size:13px;color:var(--text)}
+  .promo-bar a{color:var(--silver-bright);font-weight:700;text-decoration:underline}
+  .promo-bar .promo-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:2px 6px;line-height:1;flex-shrink:0}
+  .promo-bar .promo-close:hover{color:var(--text)}
 </style>
 </head>
 <body>
+
+<div class="promo-bar" id="promoBar">
+  <div class="promo-bar-inner">
+    <span>🎉 Free during Early Access — no charge yet.</span>
+    <a href="https://chromewebstore.google.com/detail/omninator-%E2%80%94-google-flow-b/lmloaecdbhggnjdgakapmomkdiepppgl" target="_blank" rel="noopener">Get it on the Chrome Web Store</a>
+    <button class="promo-close" aria-label="Dismiss" onclick="document.getElementById('promoBar').style.display='none';try{localStorage.setItem('omninatorPromoDismissed','1')}catch(e){}">✕</button>
+  </div>
+</div>
+<script>try{if(localStorage.getItem('omninatorPromoDismissed')){document.write('<style>.promo-bar{display:none}</style>')}}catch(e){}</script>
 
 <header>
   <div class="nav">
